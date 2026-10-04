@@ -1,0 +1,120 @@
+/* Deep river green, soft blue, warm clay, and warm greys.
+   Light is the default. Dark follows the system unless data-theme overrides it.
+   Attribute selectors outrank :root inside the media query, so an explicit
+   data-theme="light" or data-theme="dark" always wins. */
+
+:root {
+  color-scheme: light;
+
+  --color-primary: #0f3d36;
+  --color-secondary: #8fb8c9;
+  --color-accent: #b45324;
+  --color-grey-50: #f6f3ed;
+  --color-grey-100: #e7e2d8;
+  --color-grey-300: #c9c2b4;
+  --color-grey-500: #8d877b;
+  --color-grey-700: #4e4a43;
+  --color-grey-900: #1c1a17;
+
+  --color-bg: var(--color-grey-50);
+  --color-surface: #fffcf7;
+  --color-fg: var(--color-grey-900);
+  --color-muted: var(--color-grey-700);
+  --color-border: var(--color-grey-300);
+  --color-on-primary: #f4faf8;
+  --color-on-accent: #fff8f3;
+
+  --font-latin: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  --font-bangla: "Hind Siliguri", "Nirmala UI", "Noto Sans Bengali", Vrinda, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+
+  --leading-tight: 1.2;
+  --leading-body: 1.6;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-pill: 999px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --color-primary: #8fd0c4;
+    --color-secondary: #a9cfe0;
+    --color-accent: #e39a6a;
+    --color-grey-50: #101614;
+    --color-grey-100: #1b2622;
+    --color-grey-300: #3d4a45;
+    --color-grey-500: #8e9993;
+    --color-grey-700: #c9c3b6;
+    --color-grey-900: #f3f0e8;
+
+    --color-bg: var(--color-grey-50);
+    --color-surface: var(--color-grey-100);
+    --color-fg: var(--color-grey-900);
+    --color-muted: var(--color-grey-700);
+    --color-border: var(--color-grey-300);
+    --color-on-primary: #0c2420;
+    --color-on-accent: #1c120c;
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --color-primary: #0f3d36;
+  --color-secondary: #8fb8c9;
+  --color-accent: #b45324;
+  --color-grey-50: #f6f3ed;
+  --color-grey-100: #e7e2d8;
+  --color-grey-300: #c9c2b4;
+  --color-grey-500: #8d877b;
+  --color-grey-700: #4e4a43;
+  --color-grey-900: #1c1a17;
+
+  --color-bg: var(--color-grey-50);
+  --color-surface: #fffcf7;
+  --color-fg: var(--color-grey-900);
+  --color-muted: var(--color-grey-700);
+  --color-border: var(--color-grey-300);
+  --color-on-primary: #f4faf8;
+  --color-on-accent: #fff8f3;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-primary: #8fd0c4;
+  --color-secondary: #a9cfe0;
+  --color-accent: #e39a6a;
+  --color-grey-50: #101614;
+  --color-grey-100: #1b2622;
+  --color-grey-300: #3d4a45;
+  --color-grey-500: #8e9993;
+  --color-grey-700: #c9c3b6;
+  --color-grey-900: #f3f0e8;
+
+  --color-bg: var(--color-grey-50);
+  --color-surface: var(--color-grey-100);
+  --color-fg: var(--color-grey-900);
+  --color-muted: var(--color-grey-700);
+  --color-border: var(--color-grey-300);
+  --color-on-primary: #0c2420;
+  --color-on-accent: #1c120c;
+}
