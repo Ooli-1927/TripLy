@@ -1,1 +1,552 @@
-[]
+[
+  {
+    "id": "coxs-bazar",
+    "name": { "en": "Cox's Bazar", "bn": "কক্সবাজার" },
+    "division": "Chattogram",
+    "district": "Cox's Bazar",
+    "lat": 21.4272,
+    "lng": 92.0058,
+    "tags": {
+      "peaceful": 0.4,
+      "adventure": 0.4,
+      "cultural": 0.3,
+      "social": 0.8,
+      "photography": 0.7,
+      "hiking": 0.2,
+      "boating": 0.3,
+      "food": 0.6,
+      "history": 0.2,
+      "beach": 1.0,
+      "wildlife": 0.2,
+      "relaxing": 0.6
+    },
+    "dailyCost": 2200,
+    "costNote": {
+      "low": 1500,
+      "high": 4000,
+      "rationale": "Budget hotel + meals on the beach strip; peak season and seafront hotels push the high end."
+    },
+    "minDays": 2,
+    "bestMonths": [11, 12, 1, 2, 3],
+    "access": {
+      "openMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "overnightMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "permit": "none",
+      "maxStayHours": null,
+      "note": {
+        "en": "TODO_VERIFY year-round open/overnight assumptions for the main beach area.",
+        "bn": "মূল সৈকত এলাকার সারা বছর খোলা/রাত্রিযাপনের অনুমান TODO_VERIFY।"
+      },
+      "source": "TODO_SOURCE",
+      "lastVerified": null
+    },
+    "popularityTier": "iconic",
+    "popularity": 0.95,
+    "unesco": false,
+    "summary": {
+      "en": "Bangladesh's best-known beach town, with a long sandy shoreline and a busy tourist strip.",
+      "bn": "বাংলাদেশের সবচেয়ে পরিচিত সৈকত শহর, লম্বা বালুকাময় তটরেখা ও ব্যস্ত পর্যটন এলাকা নিয়ে।"
+    },
+    "tips": {
+      "en": "Book lodging early in peak winter; treat all quoted beach costs as estimates.",
+      "bn": "শীতের ব্যস্ত মৌসুমে আগে থেকে থাকার ব্যবস্থা করুন; সৈকতের খরচকে অনুমান হিসেবে ধরুন।"
+    },
+    "tagsReviewed": false,
+    "bnReview": true
+  },
+  {
+    "id": "saint-martin",
+    "name": { "en": "Saint Martin's Island", "bn": "সেন্ট মার্টিন দ্বীপ" },
+    "division": "Chattogram",
+    "district": "Cox's Bazar",
+    "lat": 20.627,
+    "lng": 92.3222,
+    "tags": {
+      "peaceful": 0.7,
+      "adventure": 0.5,
+      "cultural": 0.2,
+      "social": 0.5,
+      "photography": 0.8,
+      "hiking": 0.2,
+      "boating": 0.7,
+      "food": 0.5,
+      "history": 0.1,
+      "beach": 0.9,
+      "wildlife": 0.3,
+      "relaxing": 0.7
+    },
+    "dailyCost": 2800,
+    "costNote": {
+      "low": 2000,
+      "high": 4500,
+      "rationale": "Boat transfer from Teknaf plus limited island lodging and meals; overnight packages raise the high end."
+    },
+    "minDays": 1,
+    "bestMonths": [11, 12, 1],
+    "access": {
+      "openMonths": [11, 12, 1],
+      "overnightMonths": [12, 1],
+      "permit": "travel_pass",
+      "maxStayHours": 2,
+      "note": {
+        "en": "Open Nov–Jan only; overnight Dec–Jan only; day visits capped at 2 hours; closed Feb–Oct.",
+        "bn": "শুধু নভেম্বর–জানুয়ারি খোলা; রাত্রিযাপন শুধু ডিসেম্বর–জানুয়ারি; দিনের ভ্রমণ সর্বোচ্চ ২ ঘণ্টা; ফেব্রুয়ারি–অক্টোবর বন্ধ।"
+      },
+      "source": "bdnews24",
+      "lastVerified": "2026-07-06"
+    },
+    "popularityTier": "iconic",
+    "popularity": 0.85,
+    "unesco": false,
+    "summary": {
+      "en": "Bangladesh's only coral island, reached by boat from Teknaf, with strict seasonal access rules.",
+      "bn": "টেকনাফ থেকে নৌকায় পৌঁছানো বাংলাদেশের একমাত্র প্রবাল দ্বীপ, কঠোর মৌসুমি প্রবেশ নিয়মসহ।"
+    },
+    "tips": {
+      "en": "Confirm the current travel-pass and boat schedule before you go; overnight slots are limited.",
+      "bn": "যাওয়ার আগে চলতি ট্রাভেল পাস ও নৌকা সময়সূচি নিশ্চিত করুন; রাত্রিযাপনের সুযোগ সীমিত।"
+    },
+    "tagsReviewed": false,
+    "bnReview": true
+  },
+  {
+    "id": "bandarban",
+    "name": { "en": "Bandarban", "bn": "বান্দরবান" },
+    "division": "Chattogram",
+    "district": "Bandarban",
+    "lat": 22.1953,
+    "lng": 92.2184,
+    "tags": {
+      "peaceful": 0.7,
+      "adventure": 0.9,
+      "cultural": 0.6,
+      "social": 0.4,
+      "photography": 0.9,
+      "hiking": 0.95,
+      "boating": 0.4,
+      "food": 0.5,
+      "history": 0.3,
+      "beach": 0.0,
+      "wildlife": 0.5,
+      "relaxing": 0.5
+    },
+    "dailyCost": 2000,
+    "costNote": {
+      "low": 1400,
+      "high": 3500,
+      "rationale": "Hill-town guesthouse + meals; guided treks and remote jeep hire push costs up."
+    },
+    "minDays": 2,
+    "bestMonths": [10, 11, 12, 1, 2, 3],
+    "access": {
+      "openMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "overnightMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "permit": "none",
+      "maxStayHours": null,
+      "note": {
+        "en": "TODO_VERIFY: some remote hills/border-adjacent spots may need local permission; rules can change.",
+        "bn": "TODO_VERIFY: কিছু দূরবর্তী পাহাড়/সীমান্তসংলগ্ন এলাকায় স্থানীয় অনুমতি লাগতে পারে; নিয়ম বদলাতে পারে।"
+      },
+      "source": "TODO_SOURCE",
+      "lastVerified": null
+    },
+    "popularityTier": "iconic",
+    "popularity": 0.8,
+    "unesco": false,
+    "summary": {
+      "en": "Hill district known for trekking, viewpoints, and Indigenous cultural landscapes in the Chattogram Hill Tracts.",
+      "bn": "পার্বত্য চট্টগ্রামের ট্রেকিং, দৃষ্টিনন্দন স্থান ও আদিবাসী সাংস্কৃতিক ভূদৃশ্যের জন্য পরিচিত জেলা।"
+    },
+    "tips": {
+      "en": "Use local guides for longer treks; check which areas are currently open before travel.",
+      "bn": "লম্বা ট্রেকের জন্য স্থানীয় গাইড নিন; যাওয়ার আগে কোন এলাকা খোলা আছে তা যাচাই করুন।"
+    },
+    "tagsReviewed": false,
+    "bnReview": true
+  },
+  {
+    "id": "rangamati",
+    "name": { "en": "Rangamati", "bn": "রাঙ্গামাটি" },
+    "division": "Chattogram",
+    "district": "Rangamati",
+    "lat": 22.7324,
+    "lng": 92.2988,
+    "tags": {
+      "peaceful": 0.8,
+      "adventure": 0.6,
+      "cultural": 0.6,
+      "social": 0.4,
+      "photography": 0.85,
+      "hiking": 0.5,
+      "boating": 0.9,
+      "food": 0.5,
+      "history": 0.3,
+      "beach": 0.0,
+      "wildlife": 0.4,
+      "relaxing": 0.7
+    },
+    "dailyCost": 1800,
+    "costNote": {
+      "low": 1200,
+      "high": 3000,
+      "rationale": "Lakeside lodging + meals; Kaptai Lake boat hire is the main variable cost."
+    },
+    "minDays": 2,
+    "bestMonths": [10, 11, 12, 1, 2, 3],
+    "access": {
+      "openMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "overnightMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "permit": "none",
+      "maxStayHours": null,
+      "note": {
+        "en": "TODO_VERIFY: lake and hill-tract access rules for some spots may need local checks.",
+        "bn": "TODO_VERIFY: হ্রদ ও পার্বত্য কিছু এলাকার প্রবেশ নিয়ম স্থানীয়ভাবে যাচাই করা দরকার হতে পারে।"
+      },
+      "source": "TODO_SOURCE",
+      "lastVerified": null
+    },
+    "popularityTier": "iconic",
+    "popularity": 0.7,
+    "unesco": false,
+    "summary": {
+      "en": "Hill-tract town beside Kaptai Lake, known for boat rides and quiet lake views.",
+      "bn": "কাপ্তাই হ্রদের পাশে পার্বত্য শহর, নৌকা ভ্রমণ ও শান্ত হ্রদ দৃশ্যের জন্য পরিচিত।"
+    },
+    "tips": {
+      "en": "Plan boat time around weather on the lake; treat quoted fares as estimates.",
+      "bn": "হ্রদের আবহাওয়া দেখে নৌকা সময় পরিকল্পনা করুন; ভাড়া অনুমান হিসেবে ধরুন।"
+    },
+    "tagsReviewed": false,
+    "bnReview": true
+  },
+  {
+    "id": "sreemangal",
+    "name": { "en": "Sreemangal", "bn": "শ্রীমঙ্গল" },
+    "division": "Sylhet",
+    "district": "Moulvibazar",
+    "lat": 24.3065,
+    "lng": 91.7296,
+    "tags": {
+      "peaceful": 0.9,
+      "adventure": 0.3,
+      "cultural": 0.4,
+      "social": 0.3,
+      "photography": 0.8,
+      "hiking": 0.5,
+      "boating": 0.1,
+      "food": 0.6,
+      "history": 0.2,
+      "beach": 0.0,
+      "wildlife": 0.4,
+      "relaxing": 0.9
+    },
+    "dailyCost": 1500,
+    "costNote": {
+      "low": 1000,
+      "high": 2500,
+      "rationale": "Budget guesthouse + meals; tea-garden and Lawachara day trips add local transport."
+    },
+    "minDays": 2,
+    "bestMonths": [10, 11, 12, 1, 2, 3],
+    "access": {
+      "openMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "overnightMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "permit": "none",
+      "maxStayHours": null,
+      "note": {
+        "en": "TODO_VERIFY year-round town access; park/forest entry fees and hours may vary.",
+        "bn": "শহরের সারা বছর প্রবেশ TODO_VERIFY; পার্ক/বনের প্রবেশমূল্য ও সময় বদলাতে পারে।"
+      },
+      "source": "TODO_SOURCE",
+      "lastVerified": null
+    },
+    "popularityTier": "iconic",
+    "popularity": 0.75,
+    "unesco": false,
+    "summary": {
+      "en": "Tea-country hub in Sylhet division, known for green gardens, quiet stays, and nearby forest walks.",
+      "bn": "সিলেট বিভাগের চা অঞ্চলের কেন্দ্র, সবুজ বাগান, শান্ত থাকার জায়গা ও কাছের বন পথচলার জন্য পরিচিত।"
+    },
+    "tips": {
+      "en": "Combine tea-garden mornings with a Lawachara visit; keep costs labelled as estimates.",
+      "bn": "সকালে চা বাগান ও লাউয়াছড়া একসাথে পরিকল্পনা করুন; খরচ অনুমান হিসেবে রাখুন।"
+    },
+    "tagsReviewed": false,
+    "bnReview": true
+  },
+  {
+    "id": "jaflong",
+    "name": { "en": "Jaflong", "bn": "জাফলং" },
+    "division": "Sylhet",
+    "district": "Sylhet",
+    "lat": 25.1632,
+    "lng": 92.0176,
+    "tags": {
+      "peaceful": 0.6,
+      "adventure": 0.4,
+      "cultural": 0.3,
+      "social": 0.5,
+      "photography": 0.8,
+      "hiking": 0.3,
+      "boating": 0.5,
+      "food": 0.3,
+      "history": 0.1,
+      "beach": 0.0,
+      "wildlife": 0.2,
+      "relaxing": 0.5
+    },
+    "dailyCost": 1200,
+    "costNote": {
+      "low": 800,
+      "high": 2000,
+      "rationale": "Often a day trip from Sylhet; costs are mainly transport, snacks, and optional boat rides."
+    },
+    "minDays": 1,
+    "bestMonths": [10, 11, 12, 1, 2, 3],
+    "access": {
+      "openMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "overnightMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "permit": "none",
+      "maxStayHours": null,
+      "note": {
+        "en": "TODO_VERIFY border-adjacent visitor rules and any seasonal river access limits.",
+        "bn": "সীমান্তসংলগ্ন দর্শনার্থী নিয়ম ও মৌসুমি নদী প্রবেশ সীমা TODO_VERIFY।"
+      },
+      "source": "TODO_SOURCE",
+      "lastVerified": null
+    },
+    "popularityTier": "hidden",
+    "popularity": 0.55,
+    "unesco": false,
+    "summary": {
+      "en": "Riverside spot near the Meghalaya foothills, known for stone collection views and day trips from Sylhet.",
+      "bn": "মেঘালয়ের পাদদেশের কাছে নদীপাড়ের স্থান, পাথর সংগ্রহের দৃশ্য ও সিলেট থেকে দিনের ভ্রমণের জন্য পরিচিত।"
+    },
+    "tips": {
+      "en": "Go early to avoid crowds; confirm boat and local transport prices on the day.",
+      "bn": "ভিড় এড়াতে সকালে যান; দিনের নৌকা ও স্থানীয় যাতায়াতের দাম নিশ্চিত করুন।"
+    },
+    "tagsReviewed": false,
+    "bnReview": true
+  },
+  {
+    "id": "sonargaon",
+    "name": { "en": "Sonargaon", "bn": "সোনারগাঁও" },
+    "division": "Dhaka",
+    "district": "Narayanganj",
+    "lat": 23.6486,
+    "lng": 90.6042,
+    "tags": {
+      "peaceful": 0.5,
+      "adventure": 0.1,
+      "cultural": 0.9,
+      "social": 0.4,
+      "photography": 0.7,
+      "hiking": 0.1,
+      "boating": 0.2,
+      "food": 0.4,
+      "history": 0.95,
+      "beach": 0.0,
+      "wildlife": 0.1,
+      "relaxing": 0.4
+    },
+    "dailyCost": 1000,
+    "costNote": {
+      "low": 600,
+      "high": 1800,
+      "rationale": "Common Dhaka day trip; mainly transport, museum/entry fees, and meals."
+    },
+    "minDays": 1,
+    "bestMonths": [10, 11, 12, 1, 2, 3],
+    "access": {
+      "openMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "overnightMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "permit": "none",
+      "maxStayHours": null,
+      "note": {
+        "en": "TODO_VERIFY museum and heritage-site opening hours and any holiday closures.",
+        "bn": "জাদুঘর ও ঐতিহ্য স্থানের খোলার সময় এবং ছুটির দিন বন্ধ থাকা TODO_VERIFY।"
+      },
+      "source": "TODO_SOURCE",
+      "lastVerified": null
+    },
+    "popularityTier": "hidden",
+    "popularity": 0.5,
+    "unesco": false,
+    "summary": {
+      "en": "Historic capital area near Dhaka, with museums, old architecture, and craft heritage.",
+      "bn": "ঢাকার কাছে ঐতিহাসিক রাজধানী অঞ্চল, জাদুঘর, পুরনো স্থাপত্য ও কারুশিল্প ঐতিহ্যসহ।"
+    },
+    "tips": {
+      "en": "Pair Panam Nagar with the folk museum; check site hours before leaving Dhaka.",
+      "bn": "পানাম নগর ও লোকজাদুঘর একসাথে দেখুন; ঢাকা ছাড়ার আগে খোলার সময় যাচাই করুন।"
+    },
+    "tagsReviewed": false,
+    "bnReview": true
+  },
+  {
+    "id": "sundarbans",
+    "name": { "en": "Sundarbans", "bn": "সুন্দরবন" },
+    "division": "Khulna",
+    "district": "Bagerhat",
+    "lat": 22.1288,
+    "lng": 89.55,
+    "tags": {
+      "peaceful": 0.7,
+      "adventure": 0.8,
+      "cultural": 0.3,
+      "social": 0.3,
+      "photography": 0.85,
+      "hiking": 0.3,
+      "boating": 0.95,
+      "food": 0.3,
+      "history": 0.2,
+      "beach": 0.1,
+      "wildlife": 1.0,
+      "relaxing": 0.4
+    },
+    "dailyCost": 4500,
+    "costNote": {
+      "low": 3000,
+      "high": 8000,
+      "rationale": "Boat-based tours dominate cost (permit, guide, vessel, meals); shared packages sit lower, private charters much higher."
+    },
+    "minDays": 2,
+    "bestMonths": [11, 12, 1, 2],
+    "access": {
+      "openMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "overnightMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "permit": "permission_required",
+      "maxStayHours": null,
+      "note": {
+        "en": "TODO_VERIFY: forest-department / authorised-operator permit rules and any seasonal zone closures.",
+        "bn": "TODO_VERIFY: বন বিভাগ/অনুমোদিত অপারেটরের অনুমতি নিয়ম ও মৌসুমি জোন বন্ধ থাকার বিষয়।"
+      },
+      "source": "TODO_SOURCE",
+      "lastVerified": null
+    },
+    "popularityTier": "iconic",
+    "popularity": 0.9,
+    "unesco": true,
+    "summary": {
+      "en": "UNESCO-listed mangrove forest shared with India, famous for boat safaris and Bengal tiger habitat.",
+      "bn": "ভারতের সাথে ভাগ করা ইউনেস্কো তালিকভুক্ত ম্যানগ্রোভ বন, নৌকা সাফারি ও রয়েল বেঙ্গল টাইগারের আবাসস্থলের জন্য বিখ্যাত।"
+    },
+    "tips": {
+      "en": "Book through an authorised operator; winter months are usually better for wildlife viewing.",
+      "bn": "অনুমোদিত অপারেটরের মাধ্যমে বুক করুন; বন্যপ্রাণী দেখার জন্য শীতকাল সাধারণত ভালো।"
+    },
+    "tagsReviewed": false,
+    "bnReview": true
+  },
+  {
+    "id": "kuakata",
+    "name": { "en": "Kuakata", "bn": "কুয়াকাটা" },
+    "division": "Barishal",
+    "district": "Patuakhali",
+    "lat": 21.8213,
+    "lng": 90.1215,
+    "tags": {
+      "peaceful": 0.8,
+      "adventure": 0.3,
+      "cultural": 0.4,
+      "social": 0.4,
+      "photography": 0.8,
+      "hiking": 0.2,
+      "boating": 0.3,
+      "food": 0.5,
+      "history": 0.2,
+      "beach": 0.9,
+      "wildlife": 0.2,
+      "relaxing": 0.8
+    },
+    "dailyCost": 1600,
+    "costNote": {
+      "low": 1000,
+      "high": 2800,
+      "rationale": "Smaller beach town lodging + meals; less commercial than Cox's Bazar, but peak holidays raise prices."
+    },
+    "minDays": 2,
+    "bestMonths": [11, 12, 1, 2, 3],
+    "access": {
+      "openMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "overnightMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "permit": "none",
+      "maxStayHours": null,
+      "note": {
+        "en": "TODO_VERIFY year-round beach access and any storm-season advisories.",
+        "bn": "সারা বছর সৈকত প্রবেশ ও ঝড় মৌসুমের সতর্কতা TODO_VERIFY।"
+      },
+      "source": "TODO_SOURCE",
+      "lastVerified": null
+    },
+    "popularityTier": "iconic",
+    "popularity": 0.65,
+    "unesco": false,
+    "summary": {
+      "en": "Southern beach town known for sunrise and sunset over the Bay of Bengal from the same shore.",
+      "bn": "দক্ষিণের সৈকত শহর, একই তট থেকে বঙ্গোপসাগরে সূর্যোদয় ও সূর্যাস্ত দেখার জন্য পরিচিত।"
+    },
+    "tips": {
+      "en": "Allow travel time via Barishal/Patuakhali; sunrise and sunset walks are the main draw.",
+      "bn": "বরিশাল/পটুয়াখালী হয়ে যাতায়াতের সময় রাখুন; সূর্যোদয় ও সূর্যাস্তই মূল আকর্ষণ।"
+    },
+    "tagsReviewed": false,
+    "bnReview": true
+  },
+  {
+    "id": "paharpur",
+    "name": { "en": "Paharpur", "bn": "পাহাড়পুর" },
+    "division": "Rajshahi",
+    "district": "Naogaon",
+    "lat": 25.0319,
+    "lng": 88.977,
+    "tags": {
+      "peaceful": 0.7,
+      "adventure": 0.1,
+      "cultural": 0.95,
+      "social": 0.2,
+      "photography": 0.7,
+      "hiking": 0.1,
+      "boating": 0.0,
+      "food": 0.2,
+      "history": 1.0,
+      "beach": 0.0,
+      "wildlife": 0.1,
+      "relaxing": 0.5
+    },
+    "dailyCost": 1100,
+    "costNote": {
+      "low": 700,
+      "high": 2000,
+      "rationale": "Mostly transport from Rajshahi/Naogaon plus site entry and simple meals; limited local lodging options."
+    },
+    "minDays": 1,
+    "bestMonths": [10, 11, 12, 1, 2, 3],
+    "access": {
+      "openMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "overnightMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "permit": "none",
+      "maxStayHours": null,
+      "note": {
+        "en": "TODO_VERIFY archaeological site opening hours, tickets, and holiday closures.",
+        "bn": "প্রত্নতাত্ত্বিক স্থানের খোলার সময়, টিকিট ও ছুটির দিন বন্ধ TODO_VERIFY।"
+      },
+      "source": "TODO_SOURCE",
+      "lastVerified": null
+    },
+    "popularityTier": "hidden",
+    "popularity": 0.45,
+    "unesco": true,
+    "summary": {
+      "en": "UNESCO-listed Somapura Mahavihara ruins — one of South Asia's major early medieval Buddhist monastic sites.",
+      "bn": "ইউনেস্কো তালিকভুক্ত সোমপুর মহাবিহারের ধ্বংসাবশেষ — দক্ষিণ এশিয়ার প্রধান প্রাচীন বৌদ্ধ বিহারগুলোর একটি।"
+    },
+    "tips": {
+      "en": "Combine with a Rajshahi-region heritage circuit; confirm site hours before travel.",
+      "bn": "রাজশাহী অঞ্চলের অন্য ঐতিহ্য সফরের সাথে মিলিয়ে নিন; যাওয়ার আগে খোলার সময় নিশ্চিত করুন।"
+    },
+    "tagsReviewed": false,
+    "bnReview": true
+  }
+]
