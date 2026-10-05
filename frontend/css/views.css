@@ -1790,16 +1790,29 @@
 }
 
 .result-card .fit-ring {
-  width: 3.6rem;
-  height: 3.6rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.result-card .fit-ring-track,
+.result-card .fit-ring-value {
+  stroke-width: 6;
+}
+
+.result-card .fit-ring-label {
+  inset: 20%;
+  gap: 0.08rem;
 }
 
 .result-card .fit-ring-score {
-  font-size: var(--text-base);
+  font-size: 1.05rem;
+  line-height: 1;
 }
 
 .result-card .fit-ring-caption {
-  font-size: 0.52rem;
+  font-size: 0.48rem;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
 }
 
 .result-card .card-title {
