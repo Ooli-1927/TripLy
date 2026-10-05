@@ -188,7 +188,7 @@ h3 {
   color: var(--color-fg);
   font-weight: 700;
   line-height: var(--leading-tight);
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
 }
 
 h1 { font-size: var(--text-3xl); }

@@ -401,9 +401,13 @@ function renderCard(item, dest, situation, lang, rank) {
           </div>
           <div class="fit-ring-wrap">
             ${fitRingSvg(score)}
-            <button type="button" class="btn-link" data-action="fit-help">${escapeHtml(
-              t('results.fitScoreHow'),
-            )}</button>
+            <button
+              type="button"
+              class="fit-help-btn"
+              data-action="fit-help"
+              aria-label="${escapeAttr(t('results.fitScoreHow'))}"
+              title="${escapeAttr(t('results.fitScoreHow'))}"
+            >${icon('info')}</button>
           </div>
         </div>
       </div>
