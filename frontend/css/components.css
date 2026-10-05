@@ -707,10 +707,13 @@ main {
 
 .fit-ring-label {
   position: absolute;
-  inset: 0;
+  inset: 18%;
   display: grid;
-  place-content: center;
+  align-content: center;
+  justify-items: center;
+  gap: 0.12rem;
   text-align: center;
+  pointer-events: none;
 }
 
 .fit-ring-score {
@@ -723,10 +726,12 @@ main {
 
 .fit-ring-caption {
   color: var(--color-muted);
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
   text-transform: uppercase;
+  max-width: 100%;
 }
 
 .skeleton {
