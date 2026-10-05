@@ -436,23 +436,25 @@ function renderCard(item, dest, situation, lang, rank) {
           </div>
         </dl>
         ${weatherSlotHtml({ id: dest.id, lat: dest.lat, lng: dest.lng })}
-        ${
-          matched.length > 0
-            ? `<div class="matched">
-                <span class="matched-label">${escapeHtml(t('results.matchedTags'))}</span>
-                <ul class="matched-list">
-                  ${matched
-                    .map(
-                      (tag) =>
-                        `<li>${icon(tag)}<span>${escapeHtml(tagLabel(tag))}</span></li>`,
-                    )
-                    .join('')}
-                </ul>
-              </div>`
-            : ''
-        }
-        ${whyMatchHtml(explanation, lang)}
-        ${warnings ? `<ul class="notice-list">${warnings}</ul>` : ''}
+        <div class="card-foot">
+          ${
+            matched.length > 0
+              ? `<div class="matched">
+                  <span class="matched-label">${escapeHtml(t('results.matchedTags'))}</span>
+                  <ul class="matched-list">
+                    ${matched
+                      .map(
+                        (tag) =>
+                          `<li>${icon(tag)}<span>${escapeHtml(tagLabel(tag))}</span></li>`,
+                      )
+                      .join('')}
+                  </ul>
+                </div>`
+              : ''
+          }
+          ${whyMatchHtml(explanation, lang)}
+          ${warnings ? `<ul class="notice-list">${warnings}</ul>` : ''}
+        </div>
       </div>
     </li>
   `;
