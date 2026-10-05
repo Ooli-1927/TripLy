@@ -591,6 +591,7 @@ main {
 .summary-chip {
   cursor: default;
   font-size: var(--text-xs);
+  line-height: 1;
   background: var(--color-surface-raised);
 }
 
