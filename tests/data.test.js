@@ -3,11 +3,11 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateDestination } from '../js/utils/validate.js';
+import { validateDestination } from '../frontend/js/utils/validate.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const destinations = JSON.parse(
-  readFileSync(join(root, 'data', 'destinations.json'), 'utf8'),
+  readFileSync(join(root, 'frontend', 'data', 'destinations.json'), 'utf8'),
 );
 
 const EXPECTED_IDS = [

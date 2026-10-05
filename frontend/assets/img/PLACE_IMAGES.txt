@@ -1,0 +1,20 @@
+Triply destination photos
+
+Source (do not edit via scripts): frontend/assets/img-source/
+Prepared WebP for the app:     frontend/assets/img/<destination-id>/
+
+Per destination:
+  hero.webp
+  spot-1.webp … spot-4.webp
+
+Destination ids:
+  coxs-bazar, saint-martin, bandarban, rangamati, sreemangal,
+  jaflong, sonargaon, sundarbans, kuakata, paharpur
+
+Note: source folder "cox-bazar" maps to destination id "coxs-bazar".
+
+Pipeline:
+  npm run prepare:images   # img-source → img/*.webp (img-source untouched)
+  npm run seed:images      # upload img/*.webp → MongoDB GridFS
+
+Site loads MongoDB URLs, e.g. /api/media/dest/bandarban/hero

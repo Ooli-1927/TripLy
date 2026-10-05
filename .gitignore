@@ -1,0 +1,9 @@
+node_modules/
+backend/.env
+.env
+.DS_Store
+Thumbs.db
+lighthouse-*.json
+frontend/assets/assets/
+**/__MACOSX/
+.cursor/

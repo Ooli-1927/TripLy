@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+    <meta name="description" content="Triply — explainable destination recommendations for domestic travel in Bangladesh.">
+    <title></title>
+    <script>
+      /* Block accidental touchpad pinch-zoom (mapped to Ctrl+wheel). */
+      (function () {
+        window.addEventListener(
+          'wheel',
+          function (event) {
+            if (event.ctrlKey) event.preventDefault();
+          },
+          { passive: false, capture: true },
+        );
+        document.addEventListener('gesturestart', function (event) {
+          event.preventDefault();
+        });
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/views.css">
+    <link rel="stylesheet" href="css/auth.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="./">
+        <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 16c4-8 7 4 12-2s5-8 6-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        <span data-i18n="app.name"></span>
+      </a>
+      <nav data-i18n="nav.label" data-i18n-attr="aria-label">
+        <ul class="nav-list">
+          <li><a href="#explore" data-i18n="nav.explore"></a></li>
+          <li><a href="#how" data-i18n="nav.how"></a></li>
+          <li><a href="#about" data-i18n="nav.about"></a></li>
+        </ul>
+      </nav>
+      <div class="header-tools">
+        <a class="header-btn header-btn--primary auth-nav-login" href="?view=login" data-nav-login data-i18n="nav.login"></a>
+        <button type="button" class="header-btn header-btn--ghost auth-nav-logout" data-nav-logout hidden data-i18n="nav.logout"></button>
+        <button type="button" id="theme-toggle" class="header-icon-btn" aria-label="Theme"></button>
+        <button type="button" id="lang-toggle" class="header-btn header-btn--lang lang-toggle" lang="bn"></button>
+      </div>
+    </header>
+    <main id="content"></main>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-relevant="additions"></div>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <p data-i18n="footer.note"></p>
+      </div>
+    </footer>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

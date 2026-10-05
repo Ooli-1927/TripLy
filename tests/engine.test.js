@@ -3,7 +3,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { haversineKm } from '../js/utils/geo.js';
+import { haversineKm } from '../frontend/js/utils/geo.js';
 import {
   CONFIG,
   applyConstraints,
@@ -12,11 +12,11 @@ import {
   normalizeWeights,
   recommend,
   scoreDestination,
-} from '../js/engine/index.js';
+} from '../frontend/js/engine/index.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const destinations = JSON.parse(
-  readFileSync(join(root, 'data', 'destinations.json'), 'utf8'),
+  readFileSync(join(root, 'frontend', 'data', 'destinations.json'), 'utf8'),
 );
 
 /**

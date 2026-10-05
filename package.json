@@ -2,7 +2,29 @@
   "name": "triply",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "test": "node --test \"./tests/*.js\""
+    "test": "node --test \"./tests/*.js\"",
+    "icons": "node scripts/build-icons.mjs",
+    "prepare:images": "node scripts/prepare-images.mjs",
+    "start": "node backend/index.js",
+    "dev": "node --watch backend/index.js",
+    "seed:images": "node backend/scripts/seed-images.mjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.16.0",
+    "multer": "^2.0.1"
+  },
+  "devDependencies": {
+    "lighthouse": "^13.5.0",
+    "lucide-static": "^1.52.0",
+    "sharp": "^0.35.5"
   }
 }
