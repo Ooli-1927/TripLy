@@ -2,10 +2,14 @@ import { apiUrl } from '../config.js';
 
 /**
  * Client session + auth API (MongoDB Atlas via Express).
- * Profile may be cached in localStorage for fast paint; source of truth is the JWT cookie.
+ *
+ * Login gate uses localStorage profile (`triply.session`). Once written on
+ * login/signup it stays until explicit logout — refresh must not bounce users.
+ * API calls also send a Bearer token (`triply.token`) plus the httpOnly cookie.
  */
 
 const SESSION_KEY = 'triply.session';
+const TOKEN_KEY = 'triply.token';
 
 /**
  * @typedef {{
@@ -73,6 +77,49 @@ export function clearSession() {
   } catch {
     /* ignore */
   }
+  clearToken();
+}
+
+/**
+ * @returns {string | null}
+ */
+export function readToken() {
+  try {
+    const token = localStorage.getItem(TOKEN_KEY);
+    return typeof token === 'string' && token.trim() ? token.trim() : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * @param {string} token
+ */
+export function writeToken(token) {
+  try {
+    if (typeof token === 'string' && token.trim()) {
+      localStorage.setItem(TOKEN_KEY, token.trim());
+    }
+  } catch {
+    /* ignore */
+  }
+}
+
+export function clearToken() {
+  try {
+    localStorage.removeItem(TOKEN_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
+/**
+ * Headers for authenticated API calls (cookie still sent via credentials).
+ * @returns {Record<string, string>}
+ */
+export function authHeaders() {
+  const token = readToken();
+  return token ? { Authorization: `Bearer ${token}` } : {};
 }
 
 /**
@@ -83,23 +130,22 @@ export function isLoggedIn() {
 }
 
 /**
- * Confirm the JWT cookie with the API and sync the local profile cache.
- * Keeps the cached profile on transient API failures (e.g. Render cold start)
- * so a refresh does not bounce logged-in users back to the login gate.
+ * Sync profile from the API when possible. Never clears local login on refresh
+ * failures — only logoutUser() clears the session.
  * @returns {Promise<SessionUser | null>}
  */
 export async function hydrateSession() {
   const cached = readSession();
   try {
-    const response = await fetch(apiUrl('/api/auth/me'), { credentials: 'include' });
-
-    // Only a definitive unauthorized response clears the local session.
-    if (response.status === 401) {
-      clearSession();
-      return null;
-    }
+    const response = await fetch(apiUrl('/api/auth/me'), {
+      credentials: 'include',
+      headers: {
+        ...authHeaders(),
+      },
+    });
 
     if (!response.ok) {
+      // Keep existing login across refresh / cold start / missing cookie.
       return cached;
     }
 
@@ -120,6 +166,7 @@ export async function hydrateSession() {
       avatarUrl: data.user.avatarUrl ?? null,
     };
     writeSession(user);
+    if (typeof data.token === 'string' && data.token) writeToken(data.token);
     return user;
   } catch {
     return cached;
@@ -149,6 +196,7 @@ export async function registerUser(input) {
     if (!response.ok || !data.ok) {
       return { ok: false, reason: data.reason || 'storage' };
     }
+    if (typeof data.token === 'string') writeToken(data.token);
     return { ok: true, user: /** @type {SessionUser} */ (data.user) };
   } catch {
     return { ok: false, reason: 'storage' };
@@ -172,6 +220,7 @@ export async function authenticateUser(email, password) {
     if (!response.ok || !data.ok) {
       return { ok: false, reason: data.reason || 'badCredentials' };
     }
+    if (typeof data.token === 'string') writeToken(data.token);
     return { ok: true, user: /** @type {SessionUser} */ (data.user) };
   } catch {
     return { ok: false, reason: 'storage' };
@@ -179,12 +228,18 @@ export async function authenticateUser(email, password) {
 }
 
 /**
- * Clear JWT cookie on the server and local profile cache.
+ * Clear JWT cookie on the server and local profile + token cache.
  * @returns {Promise<void>}
  */
 export async function logoutUser() {
   try {
-    await fetch(apiUrl('/api/auth/logout'), { method: 'POST', credentials: 'include' });
+    await fetch(apiUrl('/api/auth/logout'), {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        ...authHeaders(),
+      },
+    });
   } catch {
     /* ignore network errors; still clear local cache */
   }

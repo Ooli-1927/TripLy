@@ -8,7 +8,7 @@ import { dismissLoginGate, showLoginGate } from './gate.js';
 import { renderHome } from './home.js';
 import { bindReveals } from './motion.js';
 import { renderResults } from './results.js';
-import { hydrateSession, isLoggedIn, logoutUser } from './session.js';
+import { hydrateSession, isLoggedIn, logoutUser, readSession } from './session.js';
 import { defaultSituation, validateSituation } from './situation.js';
 import { isAuthRoute, parseUrl, writeUrl } from './url.js';
 
@@ -107,11 +107,16 @@ export async function mountApp() {
 
   writeUrl(initialSituation, initialView, { destinationId: initialDestinationId });
 
-  if (fromUrl.view === 'results' && !sessionUser) {
-    // Render free tier can 502 during cold start; retry once before showing the gate.
+  // Only prompt login when results was requested and there is truly no local session.
+  if (fromUrl.view === 'results' && !sessionUser && !isLoggedIn()) {
     window.setTimeout(() => {
       void hydrateSession().then((user) => {
-        if (user) {
+        if (user || isLoggedIn()) {
+          const restored = user || readSession();
+          if (!restored) {
+            requireLogin();
+            return;
+          }
           const situation = /** @type {Situation} */ (get().situation ?? initialSituation);
           const weights = normalizeWeights(
             /** @type {object} */ (get().weights ?? CONFIG.defaultWeights),
@@ -119,7 +124,7 @@ export async function mountApp() {
           const errors = validateSituation(situation);
           const canRestore = Object.keys(errors).length === 0;
           set({
-            user,
+            user: restored,
             view: 'results',
             destinationId: null,
             recommendation: canRestore ? recommend(situation, destinations, weights) : null,
@@ -127,9 +132,9 @@ export async function mountApp() {
           writeUrl(situation, 'results');
           return;
         }
-        if (!isLoggedIn()) requireLogin();
+        requireLogin();
       });
-    }, 700);
+    }, 400);
   }
 
   subscribe((state) => {

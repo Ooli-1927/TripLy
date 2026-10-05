@@ -90,8 +90,9 @@ router.post('/signup', async (req, res) => {
       password,
     });
     const publicUser = toPublicUser(user);
-    setAuthCookie(res, signToken(publicUser.id));
-    return res.status(201).json({ ok: true, user: publicUser });
+    const token = signToken(publicUser.id);
+    setAuthCookie(res, token);
+    return res.status(201).json({ ok: true, user: publicUser, token });
   } catch (err) {
     console.error('signup failed', err);
     return res.status(500).json({ ok: false, reason: 'storage' });
@@ -116,8 +117,9 @@ router.post('/login', async (req, res) => {
     }
 
     const publicUser = toPublicUser(user);
-    setAuthCookie(res, signToken(publicUser.id));
-    return res.json({ ok: true, user: publicUser });
+    const token = signToken(publicUser.id);
+    setAuthCookie(res, token);
+    return res.json({ ok: true, user: publicUser, token });
   } catch (err) {
     console.error('login failed', err);
     return res.status(500).json({ ok: false, reason: 'storage' });
@@ -130,7 +132,9 @@ router.post('/logout', (_req, res) => {
 });
 
 router.get('/me', requireAuth, (req, res) => {
-  return res.json({ ok: true, user: req.user });
+  const token = signToken(req.user.id);
+  setAuthCookie(res, token);
+  return res.json({ ok: true, user: req.user, token });
 });
 
 router.post('/avatar', requireAuth, (req, res) => {

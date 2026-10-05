@@ -21,6 +21,20 @@ export function signToken(userId) {
 }
 
 /**
+ * Read JWT from httpOnly cookie or Authorization Bearer header.
+ * @param {import('express').Request} req
+ * @returns {string | null}
+ */
+export function readAuthToken(req) {
+  const fromCookie = req.cookies?.[COOKIE_NAME];
+  if (typeof fromCookie === 'string' && fromCookie.trim()) return fromCookie.trim();
+
+  const header = req.get('authorization') || '';
+  const match = /^Bearer\s+(\S+)/i.exec(header);
+  return match ? match[1] : null;
+}
+
+/**
  * @param {import('express').Response} res
  * @param {string} token
  */
@@ -54,20 +68,21 @@ function cookieOptions() {
 }
 
 /**
- * Attach `req.user` (public profile) when a valid JWT cookie is present.
+ * Attach `req.user` (public profile) when a valid JWT is present.
  * @param {import('express').Request} req
  * @param {import('express').Response} _res
  * @param {import('express').NextFunction} next
  */
 export async function optionalAuth(req, _res, next) {
   try {
-    const token = req.cookies?.[COOKIE_NAME];
+    const token = readAuthToken(req);
     if (!token) {
       req.user = null;
       return next();
     }
     const payload = jwt.verify(token, jwtSecret());
-    const userId = typeof payload === 'object' && payload && 'sub' in payload ? String(payload.sub) : '';
+    const userId =
+      typeof payload === 'object' && payload && 'sub' in payload ? String(payload.sub) : '';
     const doc = userId ? await findUserById(userId) : null;
     req.user = doc ? toPublicUser(doc) : null;
   } catch {
