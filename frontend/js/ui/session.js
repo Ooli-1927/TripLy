@@ -84,20 +84,30 @@ export function isLoggedIn() {
 
 /**
  * Confirm the JWT cookie with the API and sync the local profile cache.
+ * Keeps the cached profile on transient API failures (e.g. Render cold start)
+ * so a refresh does not bounce logged-in users back to the login gate.
  * @returns {Promise<SessionUser | null>}
  */
 export async function hydrateSession() {
+  const cached = readSession();
   try {
     const response = await fetch(apiUrl('/api/auth/me'), { credentials: 'include' });
-    if (!response.ok) {
+
+    // Only a definitive unauthorized response clears the local session.
+    if (response.status === 401) {
       clearSession();
       return null;
     }
+
+    if (!response.ok) {
+      return cached;
+    }
+
     const data = await response.json();
     if (!data?.ok || !data.user) {
-      clearSession();
-      return null;
+      return cached;
     }
+
     /** @type {SessionUser} */
     const user = {
       id: data.user.id,
@@ -112,7 +122,7 @@ export async function hydrateSession() {
     writeSession(user);
     return user;
   } catch {
-    return readSession();
+    return cached;
   }
 }
 

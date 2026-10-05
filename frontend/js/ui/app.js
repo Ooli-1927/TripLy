@@ -108,7 +108,28 @@ export async function mountApp() {
   writeUrl(initialSituation, initialView, { destinationId: initialDestinationId });
 
   if (fromUrl.view === 'results' && !sessionUser) {
-    window.setTimeout(() => requireLogin(), 320);
+    // Render free tier can 502 during cold start; retry once before showing the gate.
+    window.setTimeout(() => {
+      void hydrateSession().then((user) => {
+        if (user) {
+          const situation = /** @type {Situation} */ (get().situation ?? initialSituation);
+          const weights = normalizeWeights(
+            /** @type {object} */ (get().weights ?? CONFIG.defaultWeights),
+          );
+          const errors = validateSituation(situation);
+          const canRestore = Object.keys(errors).length === 0;
+          set({
+            user,
+            view: 'results',
+            destinationId: null,
+            recommendation: canRestore ? recommend(situation, destinations, weights) : null,
+          });
+          writeUrl(situation, 'results');
+          return;
+        }
+        if (!isLoggedIn()) requireLogin();
+      });
+    }, 700);
   }
 
   subscribe((state) => {

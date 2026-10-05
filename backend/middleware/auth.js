@@ -25,21 +25,32 @@ export function signToken(userId) {
  * @param {string} token
  */
 export function setAuthCookie(res, token) {
-  const secure = process.env.NODE_ENV === 'production';
-  res.cookie(COOKIE_NAME, token, {
-    httpOnly: true,
-    sameSite: 'lax',
-    secure,
-    maxAge: 14 * 24 * 60 * 60 * 1000,
-    path: '/',
-  });
+  res.cookie(COOKIE_NAME, token, cookieOptions());
 }
 
 /**
  * @param {import('express').Response} res
  */
 export function clearAuthCookie(res) {
-  res.clearCookie(COOKIE_NAME, { path: '/' });
+  // Match path/sameSite/secure from set — omit maxAge so the cookie is deleted.
+  const { maxAge: _maxAge, ...clearOpts } = cookieOptions();
+  res.clearCookie(COOKIE_NAME, clearOpts);
+}
+
+/**
+ * Shared cookie flags so set/clear stay in sync on Render (HTTPS + proxy).
+ * @returns {import('express').CookieOptions}
+ */
+function cookieOptions() {
+  const secure =
+    process.env.NODE_ENV === 'production' || process.env.COOKIE_SECURE === 'true';
+  return {
+    httpOnly: true,
+    sameSite: 'lax',
+    secure,
+    maxAge: 14 * 24 * 60 * 60 * 1000,
+    path: '/',
+  };
 }
 
 /**

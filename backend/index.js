@@ -28,6 +28,8 @@ if (!process.env.JWT_SECRET) {
 
 const app = express();
 app.disable('x-powered-by');
+// Render terminates TLS at the proxy — required for correct secure cookies / req.secure.
+app.set('trust proxy', 1);
 app.use(express.json({ limit: '32kb' }));
 app.use(cookieParser());
 
