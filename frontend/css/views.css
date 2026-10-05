@@ -1440,11 +1440,12 @@
 /* ——— Results ——— */
 .results {
   position: relative;
-  padding: var(--space-4) var(--space-4) var(--space-12);
+  padding: var(--space-3) var(--space-4) var(--space-12);
   max-width: var(--content-max);
   margin-inline: auto;
   display: grid;
-  gap: var(--space-4);
+  gap: var(--space-5);
+  align-content: start;
 }
 
 .results::before {
@@ -1466,8 +1467,8 @@
 }
 
 .summary-bar {
-  position: sticky;
-  top: calc(var(--header-h) + 0.35rem);
+  position: relative;
+  top: auto;
   z-index: 5;
   display: flex;
   flex-wrap: nowrap;
@@ -1475,6 +1476,8 @@
   align-content: center;
   justify-content: space-between;
   gap: 0.5rem 0.75rem;
+  margin: 0;
+  margin-bottom: 0.15rem;
   padding: 0.35rem 0.45rem 0.35rem 0.55rem;
   background: color-mix(in srgb, var(--color-surface-raised) 94%, transparent);
   border: 1px solid var(--color-border);
@@ -1658,6 +1661,8 @@
   align-items: end;
   justify-content: space-between;
   gap: var(--space-3);
+  margin-top: 0;
+  padding-top: 0.15rem;
 }
 
 .results-toolbar h2 {
